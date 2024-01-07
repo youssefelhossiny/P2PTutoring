@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+html{
+   font-family: 'Poppins', sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.main{
+  width: 100%;
+  background: #23242a;
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
+}
+.navbar{
+  width: 100%;
+  height:75px;
+  margin: 0 auto;
+}
+.logo{
+  color: whitesmoke;
+  font-size: 35px;
+  padding-left: 25px;
+  float: left;
+  padding-top: 10px;
+}
+.menu
+{
+  width: 80%;
+  margin: 0 auto;
+  height: 70px;
+}
+nav{
+  float: right;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+#special-link {
+  color: #a2a0a0;
+}
+
+nav ul li a:hover{
+  color: #45f3ff;
+} 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+html{
+  height: 100%;
+  width: 100%;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  column-gap: 30px;
+}
+header{
+  background-color: #403f3f;
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.links a {
+  margin-top: 30px;
+  margin-right: 60px;
+  margin-left:10px;
+  font-size: 0.75em;
+  color: whitesmoke;
+  text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2)
+{
+  color: #45f3ff;
+}
+.box
+{
+  position: relative;
+  width: 80%;
+  min-height: 85%;
+  height: auto;
+  margin: 20px auto 0px auto;
+  padding: 10px 10px; 
+  overflow:auto;
+  background: #1c1c1c;
+  border-radius: 8px;
+}
+
+.box2
+{
+  position: relative;
+  width: 94%;
+  min-height: 300px;
+  height: auto;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top:40px ;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.form2
+{
+  position: absolute; 
+  inset: 3px;
+  background: #222325;
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form h4
+{
+  color:#45f3ff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.box::before
+{
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 580px;
+  height: 620px;
+  background: linear-gradient(0deg, transparent, #45f3ff, transparent, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+.box::after
+{
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 580px;
+  height: 620px;
+  background: linear-gradient(0deg, transparent, #45f3ff, transparent, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+.form
+{
+  position: absolute; 
+  inset: 3px;
+  background: #1d1e20;
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form h2
+{
+  color:#45f3ff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.test p
+{
+  color: whitesmoke;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.inputBox
+{
+  top: -40px;
+  position: relative;
+  width: 500px;
+  margin-top: 35px;
+}
+.inputBox input
+{
+  top: 50px;
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  font-family:'Poppins', sans-serif;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+.checkBox{
+  color: whitesmoke;
+  position: relative;
+}
+
+::-webkit-input-placeholder
+{
+  font-family:'Poppins', sans-serif;
+  color: whitesmoke;
+  opacity:0.6;
+}
+.inputBox i
+{
+  position: absolute;
+  top: 95px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="survey.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="box">
+    <div class="form">
+      <form id="survey">
+        <h2>Survey</h2>
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>Do You Want to Be a Tutor or Peer?</p>
+            <input type="radio" name="rdbType" value="Peer" />Peer <br />
+            <input type="radio" name="rdbType" value="Tutor" />Tutor <br />
+          </form>
+        </div>
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>What Grade are you in?:</p>
+            <input type="radio" name="rdbGrade" id="rdbGrade" value="9" />Grade 9 <br />
+            <input type="radio" name="rdbGrade" id="rdbGrade" value="10" />Grade 10 <br />
+            <input type="radio" name="rdbGrade" id="rdbGrade" value="11" />Grade 11 <br />
+            <input type="radio" name="rdbGrade" id="rdbGrade" value="12" />Grade 12 <br />
+          </form>
+        </div>
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>Gender:</p>
+            <input type="radio" name="rdbGender" id="rdbGender" value="Male" />Male <br />
+            <input type="radio" name="rdbGender" id="rdbGender" value="Female" />Female <br />
+            <input type="radio" name="rdbGender" id="rdbGender" value="Unkown" />Prefer Not To Answer <br />
+          </form>
+        </div>
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>Learning Type:</p>
+            <input type="radio" name="rdbLearning" id="rdbLearning" value="Visual" />Visual <br />
+            <input type="radio" name="rdbLearning" id="rdbLearning" value="Kinesthetic" />Kinesthetic <br />
+            <input type="radio" name="rdbLearning" id="rdbLearning" value="Auditory" />Auditory <br />
+            <input type="radio" name="rdbLearning" id="rdbLearning" value="Reading/Writing" />Reading/Writing <br />
+          </form>
+        </div>
+
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>Choose Your Subject Area</p>
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="Math" />Math <br />
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="English" />English <br />
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="Science" />Science <br />
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="History" />History <br />
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="Geography" />Geography <br />
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="Religion" />Religion <br />
+            <input type="radio" name="rdbSubject" id="rdbSubject" value="French" />French <br />
+
+          </form>
+        </div>
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>Choose The Level of The Subject</p>
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="APjunior" />AP (streaming for Grade 9/10s) <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="academicJunior" />Academic (streaming for Grade
+            9/10s)<br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="appliedJunior" />Applied (streaming for Grade
+            9/10s)<br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="APsenior" />AP (streaming for Grade 11/12s) <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="academicSenior" />University (streaming for Grade
+            11/12s) <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="appliedSenior" />College (streaming for Grade
+            11/12s)
+            <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="APphysics" />AP Physics (streaming for Grade
+            11/12s)
+            <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="physics" />Physics (streaming for Grade 11/12s)
+            <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="APchemistry" />AP Chemistry (streaming for Grade
+            11/12s) <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="chemistry" />Chemistry (streaming for Grade
+            11/12s)<br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="APbiology" />AP Biology (streaming for Grade
+            11/12s)
+            <br />
+            <input type="radio" name="rdbLevel" id="rdbLevel" value="biology" />Biology (streaming for Grade 11/12s)
+            <br />
+
+          </form>
+        </div>
+
+
+        <div class="checkBox">
+          <form>
+            <br>
+            <p>Pick Which Days Work for You</p>
+            <input type="radio" name="rdbDay" id="rdbDay" value=" Tuesday" />Tuesday<br />
+            <input type="radio" name="rdbDay" id="rdbDay" value=" Thursday" />Thursday <br />
+            <input type="radio" name="rdbDay" id="rdbDay" value=" Either" />Either Tuesday or Thursday work for me
+            <br />
+          </form>
+        </div>
+
+        <div class="inputBox">
+          <input type="number" required="required" id="rdbOEN" placeholder="Enter your OEN Number Here"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="9"><br><br>
+          <i> </i>
+        </div>
+
+      </form>
+      <a href="#"> <input type="submit" onclick="survey()" value="Submit"> </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./survey.js"></script>
+</body>
+
+</html>

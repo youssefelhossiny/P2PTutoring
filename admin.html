@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage Design</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+  <div class="main">
+    <header>
+      <div class="navbar">
+        <div class="icon">
+          <div class="icon">
+            <h2 class="logo" style="position: relative; text-align: left" ;>P2P ADMIN</h2>
+            <div class="menu">
+              <nav>
+                <ul>
+                  <li> <a href="admin.html"> Announcements </a></li>
+                  <li> <a href="adminMatches.html"> Peer & Tutor Matches</a></li>
+                  <li> <a href="Homepage.html" id="special-link">Access Student View</a></li>
+                </ul>
+              </nav>
+
+              <div class="links">
+                <a href="index.html" style="opacity: 0.8;">Sign Out</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="box">
+      <div class="form">
+        <form id="algorithm">
+          <h2 style="color: #45f3ff; font-weight: bolder;">Announcements</h2>
+
+          <div class="box2">
+            <div class="form2">
+              <form id="postAnnouncment">
+
+                <div class="postform">
+                  <h4> Post your announcement here </h4>
+                  <hr>
+                  <label style="color: grey"> Title </label>
+                  <input type="text" id="title"> </input><br>
+
+                  <label style="color: grey"> Description </label><br>
+
+                  <textarea id="description" ;
+                    style=" width:100%; display:block; max-width:98%; line-height:1.5; padding:15px 15px 30px; border-radius:3px;"></textarea><br>
+                </div>
+
+              </form>
+              <input style="background-color: grey" ; type="submit" onclick="submitAnnouncement()" value="submit">
+            </div>
+          </div>
+        </form>
+        <!--         <input style="background-color: grey"; type="submit" onclick="algorithm()" value="submit"> -->
+        <!--         <a href="#" style="position:absolute; top:650px;" ;> <button id="login-button" onclick="algorithm()" type="submit">Submit</button> </a> -->
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./admin.js"></script>
+  <!--   <script src="./algorithm.js"></script> -->
+
+</body>
+
+</html>

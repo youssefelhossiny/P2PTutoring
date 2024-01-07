@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage Design</title>
+  <link rel="stylesheet" href="adminMatches.css">
+</head>
+
+<body>
+  <div class="main">
+    <header>
+    <div class="navbar">
+      <div class="icon">
+        <div class="icon">
+          <h2 class="logo" style="position: relative; text-align: left" ;>P2P ADMIN</h2>
+          <div class="menu">
+            <nav>
+              <ul>
+              <li> <a href="admin.html"> Announcements </a></li>
+                <li> <a href="adminMatches.html"> Peer & Tutor Matches</a></li>
+                <li> <a href="Homepage.html">Access Student View</a></li>
+
+              </ul>
+            </nav>
+
+            <div class="links">
+              <a href="index.html" style="opacity: 0.8;">Sign Out</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+      
+    <div class="box">
+      <div class="form">
+        <form id="algorithm">
+          <h2 style="color: #45f3ff; font-weight: bolder;">Peer/Tutor Matches</h2>
+
+
+                
+<table id="matchesTable">
+  <tr>
+    <th>Tutor</th>
+    <th>Peer</th>
+  </tr>
+</table>
+
+<table id="UnmatchedTable">
+  <tr>
+    <th>Unmatched</th>
+  </tr>
+</table>
+        </form>
+        <input style="background-color: grey"; type="submit" onclick="algorithm(); refreshPage()" value="submit">
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./admin.js"></script>
+  
+</body>
+
+</html>

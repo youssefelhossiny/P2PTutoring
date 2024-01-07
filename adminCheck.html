@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="adminCheck.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <div class="box">
+    <div class="form">
+      <form action="" id="admin">
+        <h2>Admin Authentication</h2>
+        <div class="inputBox">
+          <input type="number" required="required" id="admincode" placeholder="Enter the Admin Code">
+          <i> </i>
+        </div>
+        <div class="links">
+          <a href="Homepage.html"> Return to Homepage</a>
+        </div>
+      </form>
+      <a href="#"> <input type="submit" onclick="adminPassword()" value="submit"> </a>
+      <script>
+        document.getElementById("admin").addEventListener("submit", adminPassword)
+        function adminPassword() {
+          var adminPass = document.getElementById("admincode").value;
+          if (adminPass === "2005") {
+            window.location.href = "admin.html";
+          }
+          else{
+            alert("incorrect code")
+          }
+        }
+      </script>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+html{
+  height: 100%;
+  width: 100%;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  column-gap: 30px;
+}
+.box
+{
+  position: relative;
+  width: 600px;
+  height: 1900px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.box::before
+{
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 580px;
+  height: 620px;
+  background: linear-gradient(0deg, transparent, #45f3ff, transparent, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+.box::after
+{
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 580px;
+  height: 620px;
+  background: linear-gradient(0deg, transparent, #45f3ff, transparent, #45f3ff);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+.form
+{
+  position: absolute; 
+  inset: 3px;
+  background: #28292d;
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.form h2
+{
+  color:#45f3ff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.test p
+{
+  color: whitesmoke;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.inputBox
+{
+  top: -40px;
+  position: relative;
+  width: 500px;
+  margin-top: 35px;
+}
+.inputBox input
+{
+  top: 50px;
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  font-family:'Poppins', sans-serif;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+.checkBox{
+  color: whitesmoke;
+  position: relative;
+}
+
+::-webkit-input-placeholder
+{
+  font-family:'Poppins', sans-serif;
+  color: whitesmoke;
+  opacity:0.6;
+}
+.inputBox i
+{
+  position: absolute;
+  top: 95px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+}
+.links
+{
+  display:flex;
+  justify-content: space-between;
+}
+.links a
+{
+  margin: 10px 0;
+  font-size: 0.75em;
+  color: #8f8f8f;
+  text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2)
+{
+  color: #45f3ff;
+}
+.links a
+{
+  margin: 10px 0;
+  font-size: 0.75em;
+  color: #8f8f8f;
+  text-decoration: none;
+}
+input[type="submit"]
+{
+  font-family:'Poppins', sans-serif;
+  border: none;
+  outline: none;
+  background: #45f3ff;
+  padding: 11px 25px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.8;
+}
+.checkBox p{
+  color:whitesmoke;
+  text-decoration: underline;
+}

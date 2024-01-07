@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head <script src="./admin.js">
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage Design</title>
+  <link rel="stylesheet" href="Homepage.css">
+</head>
+
+<body>
+
+  <div class="main">
+
+    <header>
+      <div class="navbar">
+        <div class="icon">
+          <div class="icon">
+            <h2 class="logo">P2P</h2>
+            <div class="menu">
+              <nav>
+                <ul>
+                  <li> <a href="Homepage.html">HOME</a></li>
+                  <li> <a href="Schedule.html">SCHEDULE</a></li>
+                  <li> <a href="#">MESSAGES</a></li>
+                  <li> <a href="adminCheck.html">ADMIN PAGE</a></li>
+                </ul>
+              </nav>
+
+              <div class="links">
+                <a href="index.html" style="opacity: 0.8;">Sign Out</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="box">
+      <div class="form">
+        <form id="Login">
+          <h2 style="color: #45f3ff; font-weight: bolder;">Announcements</h2>
+
+          <div class="box2">
+            <div class="form2">
+              <form id="">
+                <div id="announcements"></div>
+                </p>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="form">
+      <h2 style="color: #45f3ff; font-weight: bolder;">Your Peer/Tutor</h2>
+      <!--       <img src="https://drive.google.com/uc?export=view&id=1pDw69qnRoj15q8_hdARxt7onNpqBVJx2"
+        style="height: 550px; width: 550px; display: block; margin-left: auto; margin-right: auto; margin-top: 50px;"
+        alt="centered-image"> -->
+
+      <div id="personalizedMessage"></div>
+      <div id="your-div-id"></div>
+
+      <script>
+        function displayPersonalizedMessage() {
+          var UnmatchedDB = firebase.database().ref("Unmatched");
+          var MatchesDB = firebase.database().ref("Matches");
+          var P2PTutoringDB = firebase.database().ref("P2PTutoring");
+          var fullName = getCookie("username");
+
+          UnmatchedDB.orderByChild("name").equalTo(fullName).on("child_added", function (snapshot) {
+            var img = document.createElement("img");
+            img.src = "https://drive.google.com/uc?export=view&id=1pDw69qnRoj15q8_hdARxt7onNpqBVJx2";
+            img.style.height = "550px";
+            img.style.width = "550px";
+            img.style.display = "block";
+            img.style.marginLeft = "auto";
+            img.style.marginRight = "auto";
+            img.style.marginTop = "-80px";
+            img.alt = "centered-image";
+
+            // Get the element where you want to append the image
+            var yourDiv = document.getElementById("your-div-id");
+
+            // append the image to the div
+            yourDiv.appendChild(img);
+          });
+
+          MatchesDB.orderByChild("Peer").equalTo(fullName).on("child_added", function (snapshot) {
+            var Peer = snapshot.val().Peer;
+            var Tutor = snapshot.val().Tutor;
+
+            P2PTutoringDB.orderByChild("fullName").equalTo(Peer).on("child_added", function (snapshot) {
+              var Subject = snapshot.val().Subject;
+              var peerDay = snapshot.val().Day;
+
+              P2PTutoringDB.orderByChild("fullName").equalTo(Tutor).on("child_added", function (snapshot) {
+                var tutorDay = snapshot.val().Day;
+                var Day = peerDay;
+
+                if (peerDay === " Either" && tutorDay === " Either") {
+                  Day = "Tuesday";
+                }
+                else if (peerDay === " Tuesday" && tutorDay === " Either") {
+                  Day = "Tuesday";
+                }
+                else if (peerDay === " Thursday" && tutorDay === " Either") {
+                  Day = "Thursday";
+                }
+                else if (peerDay === " Either" && tutorDay === " Tuesday") {
+                  Day = "Tuesday";
+                }
+                else if (peerDay === " Either" && tutorDay === " Thursday") {
+                  Day = "Thursday";
+                }
+                var message = document.getElementById("personalizedMessage");
+                message.innerHTML = "Hi " + Peer + ". <br>" + " This is your tutor: " + Tutor + ". <br>" + "This is your subject: " + Subject + ". <br>" + "You will tutor on this day: " + Day;
+              });
+            });
+          });
+
+          MatchesDB.orderByChild("Tutor").equalTo(fullName).on("child_added", function (snapshot) {
+            var Peer = snapshot.val().Peer;
+            var Tutor = snapshot.val().Tutor;
+
+            P2PTutoringDB.orderByChild("fullName").equalTo(Peer).on("child_added", function (snapshot) {
+              var Subject = snapshot.val().Subject;
+              var peerDay = snapshot.val().Day;
+
+              P2PTutoringDB.orderByChild("fullName").equalTo(Tutor).on("child_added", function (snapshot) {
+                var tutorDay = snapshot.val().Day;
+                var Day = "any day";
+
+                if (peerDay === " Either" && tutorDay === " Either") {
+                  Day = "Tuesday";
+                }
+                else if (peerDay === " Tuesday" && tutorDay === " Either") {
+                  Day = "Tuesday";
+                }
+                else if (peerDay === " Thursday" && tutorDay === " Either") {
+                  Day = "Thursday";
+                }
+                else if (peerDay === " Either" && tutorDay === " Tuesday") {
+                  Day = "Tuesday";
+                }
+                else if (peerDay === " Either" && tutorDay === " Thursday") {
+                  Day = "Thursday";
+                }
+                var message = document.getElementById("personalizedMessage");
+                message.innerHTML = "Hi " + Tutor + ". <br>" + " This is your peer: " + Peer + ". <br>" + "This is your subject: " + Subject + ". <br>" + "You will tutor on this day: " + Day;
+              });
+            });
+
+          });
+        }
+
+        // Call the function when the page loads
+        window.onload = displayPersonalizedMessage;
+
+        function getCookie(name) {
+          var value = "; " + document.cookie;
+          var parts = value.split("; " + name + "=");
+          if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        var username = getCookie("username");
+        if (username != null) {
+          console.log("Cookie exists with value: " + username);
+        } else {
+          console.log("Cookie does not exist.");
+        }
+      </script>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./admin.js"></script>
+</body>
+
+</html>

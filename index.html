@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="box">
+    <div class="form">
+      <form id="Login">
+        <h2>Sign in</h2>
+        <div class="inputBox">
+          <input type="text" required="required" id="email" placeholder="Email">
+          <i> </i>
+        </div>
+        <div class="inputBox">
+          <input type="password" required="required" id="password" placeholder="Password">
+          <i> </i>
+        </div>
+        <div class="links">
+          <a href="forgotPassword.html">Forgot Password</a>
+          <a href="createAccount.html"> Sign Up</a>
+        </div>
+      </form>
+      <a href="#"> <button id="login-button" type="submit" onclick="submitLogin()">Login</button> </a>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
